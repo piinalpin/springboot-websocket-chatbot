@@ -2,9 +2,6 @@ from tensor_flow import TensorFlow
 from flask import Flask, request, jsonify
 
 resp = TensorFlow(intents="intents.json")
-
-# tag, data = resp.response("halo")
-# print(data)
 app = Flask(__name__)
 
 
