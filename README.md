@@ -1,10 +1,8 @@
 # Spring Bot Web Socket Chat Bot
 
-![Example](img/example.gif)
+An example how I integrating between contextual chat bot with web socket on spring boot and javascript client.
 
 ![Spring Bot Web Socket Chat Bot](img/spring_boot_web_socket_chat_bot.png)
-
-An example how I integrating between contextual chat bot with web socket on spring boot and javascript client.
 
 ## Requirements
 
@@ -30,3 +28,7 @@ An example how I integrating between contextual chat bot with web socket on spri
     mvn spring-boot: run
     ```
 - Run `client` service, open `frontend/index.html` through your browser and lets start messaging with chat bot.
+
+## Example Runnning
+
+![Example](img/example.gif)
