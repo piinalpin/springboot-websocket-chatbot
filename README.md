@@ -1,4 +1,4 @@
-# Spring Bot Web Socket Chat Bot
+# Spring Boot Web Socket Chat Bot
 
 An example how I integrating between contextual chat bot with web socket on spring boot and javascript client.
 
