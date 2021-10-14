@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.piinalpin.websocketserver.domain.dto.MessageDto;
 import com.piinalpin.websocketserver.domain.dto.MessageResponse;
 import com.piinalpin.websocketserver.domain.dto.RiddlesDto;
-import com.piinalpin.websocketserver.util.MessageResponseUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
