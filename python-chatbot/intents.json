@@ -1,0 +1,142 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Halo",
+        "Hai",
+        "Hello"
+      ],
+      "responses": [
+        "Hai, ada yang bisa dibantu?",
+        "Halo, ada yang bisa saya bantu?",
+        "Hai, saya adalah WebSocket Bot."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "thanks",
+      "patterns": [
+        "Terimakasih",
+        "Okay",
+        "Ok",
+        "Makasih",
+        "Makasih ya",
+        "Thanks"
+      ],
+      "responses": [
+        "Senang membantu anda.",
+        "Okay, sama sama.",
+        "Hubungi saya kalau anda ingin mencari referensi lagi",
+        "Okay, sama sama. Jangan lupa matikan notifikasi botnya biar gak mengganggu karena masih dalam tahap pengembangan"
+      ]
+    },
+    {
+      "tag": "kabar",
+      "patterns": [
+        "Apa kabar?",
+        "Bagaimana kabarnya?",
+        "Gimana kabarnya?",
+        "Gmn kabarnya?"
+      ],
+      "responses": [
+        "Aaa, Kabar saya baik.",
+        "Luar biasa.",
+        "Baik sekali hari ini",
+        "Alhamdulillah, baik."
+      ]
+    },
+    {
+      "tag": "riddles",
+      "patterns": [
+        "tebak tebakan",
+        "tebak-tebakan",
+        "tebakan",
+        "tebak",
+        "humor",
+        "lelucon",
+        "lucu"
+      ],
+      "responses": [
+        {
+          "question": "Telor apa yang sangar?",
+          "answer": "Telor asin, soalnya ada tatonya."
+        },
+        {
+          "question": "Masak apa yang ragu-ragu?",
+          "answer": "Masak iya sih?"
+        },
+        {
+          "question": "Hewan apa yang paling kurang ajar?",
+          "answer": "Kutu rambut, soalnya kepala orang diijak-injak."
+        },
+        {
+          "question": "Benda mana yang lebih berat: kapas 10 kilo atau besi 10 kilo?",
+          "answer": "Sama beratnya karena keduanya sama-sama 10 kilo."
+        },
+        {
+          "question": "Apa yang mempunyai 12 kaki dan bisa terbang?",
+          "answer": "6 ekor burung."
+        },
+        {
+          "question": "Apa yang ada di ujung langit?",
+          "answer": "Huruf T"
+        },
+        {
+          "question": "Tamunya sudah masuk, tapi yang punya malah keluar. Apakah itu?",
+          "answer": "Tukang becak lagi narik penumpang."
+        },
+        {
+          "question": "Ikan apa yang bisa terbang hayo?",
+          "answer": "Lele-lawar."
+        },
+        {
+          "question": "Hewan apa ya yang banyak keahlian?",
+          "answer": "Kukang. Ada kukang tambal ban, kukang servis motor, kukang ngomporin temen juga ada. Ups."
+        },
+        {
+          "question": "Sayur apa yang paling dingin?",
+          "answer": "Kembang cold."
+        },
+        {
+          "question": "Sayur, sayur apa yang kasihan?",
+          "answer": "Di-rebung semut."
+        },
+        {
+          "question": "Kenapa sapi bisa jalan sendiri?",
+          "answer": "Karena ada huruf i. Coba kalau diganti huruf u, bakal seram deh kalau gerak sendiri."
+        },
+        {
+          "question": "Kebo apa yang bikin kita lelah?",
+          "answer": "Kebogor jalan kaki."
+        },
+        {
+          "question": "Sepatu, sepatu apa yang bisa di pakai masak?",
+          "answer": "Sepatula (Spatula)."
+        },
+        {
+          "question": "Telor, telor apa yang diinjak nggak pecah?",
+          "answer": "Telortoar."
+        },
+        {
+          "question": "Sayur apa yang pintar nyanyi?",
+          "answer": "Kolplay."
+        },
+        {
+          "question": "Bisnis apa yang sangat terkenal?",
+          "answer": "Bisnispears (Britney Spears)."
+        },
+        {
+          "question": "Sayur, sayur apa yang bersinar?",
+          "answer": "Habis gelap, terbitlah terong."
+        },
+        {
+          "question": "Mobil tabrakan di jalan tol, yang turun apanya dulu?",
+          "answer": "Speedometer."
+        }
+      ],
+      "context_set": ""
+    }
+  ]
+}
