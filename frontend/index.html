@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Web Socket Demo</title>
+</head>
+<body>
+    <div class="center">
+        <div class="chat">
+          <div class="contact">
+              <div class="bar">
+                <div class="pic stark"></div>
+                <div class="name">
+                  WebSocket Bot
+                </div>
+                <div class="seen">
+                  Today at 12:56
+                </div>
+              </div>
+          </div>
+          <div class="messages" id="chat">
+            <div id="messagesContent">
+
+            </div>
+            <div class="message stark" id="starkIsTyping">
+              <div class="typing typing-1"></div>
+              <div class="typing typing-2"></div>
+              <div class="typing typing-3"></div>
+            </div>
+          </div>
+          <div class="input">
+            <input placeholder="Type your message here!" id="inputMessage" type="text" /><i class="fas fa-paper-plane" id="sendButton"></i>
+          </div>
+        </div>
+      </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.2/sockjs.min.js" integrity="sha512-ayb5R/nKQ3fgNrQdYynCti/n+GD0ybAhd3ACExcYvOR2J1o3HebiAe/P0oZDx5qwB+xkxuKG6Nc0AFTsPT/JDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web-socket-js/1.0.0/web_socket.min.js" integrity="sha512-jtr9/t8rtBf1Sv832XjG1kAtUECQCqFnTAJWccL8CSC82VGzkPPih8rjtOfiiRKgqLXpLA1H/uQ/nq2bkHGWTQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js" integrity="sha512-iKDtgDyTHjAitUDdLljGhenhPwrbBfqTKWO1mkhSFH3A7blITC9MhYon6SjnMhp4o0rADGw9yAC6EW4t5a4K3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    // const baseURL = 'http://localhost:8081';
+
+    // let socket = new SockJS(baseURL + '/chat');
+    var socket = new WebSocket('ws://localhost:8081/chat');
+    console.log(socket);
+
+    socket.onopen = (event) => {
+        console.log("Open connection: " + event);
+    };
+
+    socket.onmessage = (event) => {
+        $('#starkIsTyping').show();
+        setTimeout(function() {
+            const data = JSON.parse(event.data);
+            $("#messagesContent").append('<div class="message stark">' + data.message+ '</div>');
+            $('#starkIsTyping').hide();
+        }, 1000);
+        chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+    };
+
+    socket.onclose = (event) => {
+        console.log("Close connection: " + event);
+    };
+
+    let chat = document.getElementById('chat');
+    chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+    $('#starkIsTyping').hide();
+
+    $("#inputMessage").keyup(function(event) {
+        $('#starkIsTyping').hide();
+        if (event.keyCode === 13) {
+            $("#sendButton").click();
+        }
+    });
+
+    $("#sendButton").click(function() {
+        if ($("#inputMessage").val() != '') {
+            socket.send(JSON.stringify({'message': $("#inputMessage").val()}));
+            $("#messagesContent").append('<div class="message parker">' + $("#inputMessage").val() + '</div>');
+            $("#inputMessage").val('');
+            chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+        }
+    });
+</script>
+</body>
+</html>
